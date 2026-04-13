@@ -443,8 +443,7 @@
     <div class="video-frame-wrap reveal reveal-delay-2">
       <div class="video-phone">
         <div class="video-placeholder gp-1">
-          <!-- Swap this video tag src for your real video -->
-          <video id="vdd.mp4" playsinline loop muted style="display:none"></video>
+          <video id="bday-video" src="vdd.mp4" playsinline loop style="display:none;width:100%;height:100%;object-fit:cover;"></video>
         </div>
         <button class="play-btn" id="playBtn" aria-label="Play video">
           <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
@@ -453,7 +452,7 @@
         </button>
       </div>
     </div>
-    <p class="video-caption reveal reveal-delay-3">Add your video above to bring this to life ✦</p>
+    <p class="video-caption reveal reveal-delay-3">Love from Rishu and Friends ✦</p>
   </div>
 </div>
 
@@ -540,17 +539,15 @@
   let playing   = false;
 
   playBtn.addEventListener('click', () => {
-    if (video.src) {
-      if (!playing) {
-        video.style.display = 'block';
-        video.play();
-        playBtn.innerHTML = `<svg width="16" height="18" viewBox="0 0 16 18" fill="none"><rect x="1" y="1" width="5" height="16" rx="1.5" fill="#7a6555"/><rect x="10" y="1" width="5" height="16" rx="1.5" fill="#7a6555"/></svg>`;
-        playing = true;
-      } else {
-        video.pause();
-        playBtn.innerHTML = `<svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M2 1.5L18 11L2 20.5V1.5Z" fill="#7a6555" stroke="#7a6555" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
-        playing = false;
-      }
+    if (!playing) {
+      video.style.display = 'block';
+      video.play();
+      playBtn.innerHTML = `<svg width="16" height="18" viewBox="0 0 16 18" fill="none"><rect x="1" y="1" width="5" height="16" rx="1.5" fill="#7a6555"/><rect x="10" y="1" width="5" height="16" rx="1.5" fill="#7a6555"/></svg>`;
+      playing = true;
+    } else {
+      video.pause();
+      playBtn.innerHTML = `<svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M2 1.5L18 11L2 20.5V1.5Z" fill="#7a6555" stroke="#7a6555" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+      playing = false;
     }
   });
 </script>
